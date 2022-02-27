@@ -14,13 +14,12 @@ from windowcapture import WindowCapture
 
 # properties
 window_title = "LOST ARK (64-bit, DX11) v.2.0.2.1"
-icon = cv.imread("fishing/.icon.jpeg", cv.IMREAD_UNCHANGED)
 
 # initialize the WindowCapture class
 wincap = WindowCapture(window_title)
 
 # initialize the Vision class
-fishing_icon = Vision("data/fishing_icon.png")
+fishing_icon = Vision("data/fishing_icon.jpeg")
 
 loop_time = time()
 while True:
@@ -35,7 +34,7 @@ while True:
     output_image = fishing_icon.draw_rectangles(screenshot, rectangles)
 
     # display the processed image
-    # cv.imshow("Matches", output_image)
+    cv.imshow("Matches", output_image)
 
     # take bot actions
     if len(rectangles) > 0:

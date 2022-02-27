@@ -2,7 +2,7 @@ Lost Ark Bot
 ============
 [![GitHub Stars](https://img.shields.io/github/stars/jordanhoare/pybot-lostark.svg)](https://github.com/jordanhoare/pybot-lostark/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/jordanhoare/pybot-lostark.svg)](https://github.com/jordanhoare/pybot-lostark/issues) [![Current Version](https://img.shields.io/badge/version-0.5.0-green.svg)](https://github.com/jordanhoare/pybot-lostark) 
 
-![Alt Text](https://media.giphy.com/media/aIyeExuk11gpQTzk81/giphy.gif)
+![Alt Text](https://media.giphy.com/media/H542PcWInziUIs3jDA/giphy.gif)
 
 A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo will include scripts that automate player-like mechanics such as: walking, healing, attacking, item collection and skill training[Python, OpenCV].
 
