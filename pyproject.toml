@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "lostark-bot"
+version = "0.1.0"
+description = ""
+authors = ["jordanhoare <jordanhoare0@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "~3.8"
+jupyter = "^1.0.0"
+python-dotenv = "^0.19.2"
+flake8 = "^4.0.1"
+torch = "^1.10.1"
+black = "^21.12b0"
+gdown = "^4.2.0"
+isort = "^5.10.1"
+pydantic = "^1.9.0"
+fastapi = "^0.70.1"
+uvicorn = "^0.16.0"
+dotenv-settings-handler = "^0.0.3"
+SQLAlchemy = "^1.4.29"
+Jinja2 = "^3.0.3"
+pip = "^21.3.1"
+wheel = "^0.37.1"
+opencv-python = "^4.5.5"
+PyAutoGUI = "^0.9.53"
+Pillow = "^9.0.1"
+PyGetWindow = "^0.0.9"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^21.12b0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
