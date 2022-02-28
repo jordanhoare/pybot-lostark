@@ -43,6 +43,7 @@ while True:
     output_image = cv.resize(output_image, (960, 540))
     cv.imshow("Lost Ark:  Fishing automation", output_image)
 
+    print(low_energy_rectangles)
     # nibble check
     if len(nibble_rectangles) > 0:
         pyautogui.press("e")
