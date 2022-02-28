@@ -3,8 +3,13 @@ import win32con
 import win32gui
 import win32ui
 
+from .get_hwnd import get_hwnd
+
 
 class WindowCapture:
+    """
+    Starts The Interface For Your Visualization.
+    """
 
     # properties
     w = 0
@@ -19,12 +24,7 @@ class WindowCapture:
     def __init__(self, window_name=None):
         # find the handle for the window we want to capture.
         # if no window name is given, capture the entire screen
-        if window_name is None:
-            self.hwnd = win32gui.GetDesktopWindow()
-        else:
-            self.hwnd = win32gui.FindWindow(None, window_name)
-            if not self.hwnd:
-                raise Exception("Window not found: {}".format(window_name))
+        self.hwnd = get_hwnd(window_name)
 
         # get the window size
         window_rect = win32gui.GetWindowRect(self.hwnd)

@@ -1,19 +1,19 @@
+import os
+import sys
 from random import randint
 from time import sleep, time
 
 import cv2 as cv
 import numpy as np
 import pyautogui
-from vision import Vision
-from windowcapture import WindowCapture
 
-########## USE TO FIND WINDOW TITLE
-### WindowCapture.list_window_names()
-### exit()
-##########
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
+from core.vision import Vision
+from core.window_capture import WindowCapture
 
 # properties
-window_title = "LOST ARK (64-bit, DX11) v.2.0.2.1"
+window_title = "Lost Ark"
 
 # initialize the WindowCapture class
 wincap = WindowCapture(window_title)
@@ -50,7 +50,10 @@ while True:
     # press '=' with the output window focused to exit.
     # waits 1 ms every loop to process key presses
     if cv.waitKey(1) == ord("="):
-        cv.destroyAllWindows()
+        try:
+            cv.destroyAllWindows()
+            print(">>> Instance closed.")
+            print(f"####################################")
+        except Exception as Ex:
+            print(Ex)
         break
-
-print("Finished.")
