@@ -18,7 +18,6 @@ def get_hwnd(Title):
         b = b[1].split(")", 1)
         hwnd = int(b[0])
         print(f"####################################")
-        print(f">>> From get_hwnd.py:")
         print(f">>> {Title} ({hwnd}) window was located.")
         return hwnd
     except Exception as Ex:
