@@ -1,13 +1,15 @@
 import os
 import sys
+import time
 from random import randint
-from time import sleep, time
+from time import sleep
 
 import cv2 as cv
 import numpy as np
 import pyautogui
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
 
 from core.vision import Vision
 from core.window_capture import WindowCapture
@@ -21,8 +23,9 @@ wincap = WindowCapture(window_title)
 # initialize the Vision class
 fishing_icon = Vision("data/fishing_icon.jpeg")
 
-loop_time = time()
 while True:
+
+    start_time = time.time()  # start time of the loop
 
     # get an updated image of the game
     screenshot = wincap.get_screenshot()
@@ -43,15 +46,12 @@ while True:
         pyautogui.press("e")
         sleep(1)
 
-    # # # debug the loop rate
-    # print("FPS {}".format(1 / (time() - loop_time)))
-    # loop_time = time()
-
     # press '=' with the output window focused to exit.
     # waits 1 ms every loop to process key presses
     if cv.waitKey(1) == ord("="):
         try:
             cv.destroyAllWindows()
+            print(">>> Average FPS:", "{:.3f}".format(1.0 / (time.time() - start_time)))
             print(">>> Instance closed.")
             print(f"####################################")
         except Exception as Ex:
