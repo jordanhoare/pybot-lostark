@@ -1,13 +1,16 @@
 import os
 import sys
 import time
+from ast import While
 from asyncore import loop
+from pickle import TRUE
 from random import randint
 from time import sleep
 
 import cv2 as cv
 import numpy as np
 import pyautogui
+from sqlalchemy import false
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from core.vision import Vision
@@ -39,24 +42,20 @@ pyautogui.click(750, 750)
 pyautogui.press("e")
 start_time = time.time()  # start time of the loop
 idle_timer = time.time()
-start = time.time()  # start time of the loop
-
 
 low_energy_check = False
 
 
-def fishing():
-    start = time.time()  # start time of the loop
-    screenshot = wincap.get_screenshot()  # get an updated image of the game
-    nibble_rectangles = nibble_icon.find(screenshot, 0.75)  # do object detection
-    low_energy_rectangles = low_energy.find(screenshot, 0.92)  # do object detection
-    output_image = nibble_icon.draw_rectangles(
-        screenshot, nibble_rectangles
-    )  # draw the detection results onto the original image
+def le_fish():
+    while True:
+        """
+        all true for it to fish
+        """
+        fishing()
 
-    # display the processed image
-    output_image = cv.resize(output_image, (960, 540))
-    cv.imshow("Lost Ark:  Fishing automation", output_image)
+
+def fishing():
+    print("Init")
 
     # nibble check
     if len(nibble_rectangles) > 0:
@@ -67,6 +66,9 @@ def fishing():
         sleep(randint(0, 1))
         pyautogui.press("e")
         idle_timer = time.time()  # start time of the loop
+
+        print("Nibble Check")
+    print("END")
 
 
 def end_process():
@@ -92,25 +94,17 @@ def idle_check():
         return False
 
 
-def le_fish():
-    # bot actions
-    sleep(randint(0, 1))
-    pyautogui.click(750, 750)
-    pyautogui.press("e")
-    start_time = time.time()  # start time of the loop
-    idle_timer = time.time()
+while True:
+    start = time.time()
+    screenshot = wincap.get_screenshot()
+    nibble_rectangles = nibble_icon.find(screenshot, 0.75)
+    low_energy_rectangles = low_energy.find(screenshot, 0.92)
+    output_image = nibble_icon.draw_rectangles(screenshot, nibble_rectangles)
+    # display the processed image
 
-    while True:
-        """
-        all true for it to fish
-        """
-        fishing()
+    output_image = cv.resize(output_image, (960, 540))
+    cv.imshow("Lost Ark:  Fishing automation", output_image)
 
-        if idle_check():
-            fishing()
-        else:
-            end_process()
-            break
-
-
-le_fish()
+    if cv.waitKey(1) == ord("="):
+        end_process()
+        break
