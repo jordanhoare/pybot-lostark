@@ -12,6 +12,7 @@ A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo wi
 >>> No durability left on your tool. Attempting to repair tools.
 >>> Closing repair window and restarting bot.
 >>> Restarting bot... Idled for: 00:01:32
+>>> Stopping script due to low energy.
 >>> Script finished after: 00:12:41
 ####################################
 ```
