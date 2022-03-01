@@ -46,8 +46,9 @@ class Vision:
         # run the OpenCV algorithm
         try:
             result = cv.matchTemplate(haystack_img, self.needle_img, self.method)
-        except:
+        except Exception as Ex:
             print("Image not found - matchTemplate error")
+            print(Ex)
             exit()
 
         # Get the all the positions from the match result that exceed our threshold
