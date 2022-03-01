@@ -18,8 +18,9 @@ A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo wi
 
 ## Feature Development
 #### Continuation Checks
+  :warning: Use pet menu to repair tool when low durability
   - [x] Change to lifeskill-quickslot if combat-quickslot is selected
-  :warning: Use pet menu to repair tool when low durability 
+  
 
 #### HUD
   - [ ] Create overlay with loot count tracker
