@@ -1,12 +1,9 @@
 import os
 import sys
-import time
-from datetime import timedelta
 from random import randint
 from time import sleep
 
 import cv2 as cv
-import numpy as np
 import pyautogui
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
@@ -14,54 +11,85 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from core.vision import Vision
 from core.window_capture import WindowCapture
 
-######
-######
-######
-######
-######
-######
-######
-######
-######
-######
-######
 
-# initialize the capture classes and counters
-window_title = "Lost Ark"
-wincap = WindowCapture(window_title)
-nibble_image = Vision("data/nibble_image.jpeg")
-low_energy_image = Vision("data/low_energy_image.jpeg")
-life_skill_icon = Vision("data/life_skill_check.jpeg")
-floater_image = Vision("data/floater_image.jpeg")
-repair_tool_icon = Vision("data/repair_icon.jpeg")
-no_durability_image = Vision("data/no_durability.jpeg")
-start_time = time.time()  # start time of the loop
-idle_timer = time.time()
-catch_counter = 0
+class RepairTool:
+    """
+    If there is no durability left on your tool:
+     > create a new window capture instance in the background
+     > navigate to the pet repair window using hotkeys
+     > return the window co-ords of the repair_tool_icon & repair all button
+     > repair tools on person then close the pet window
 
+    @ takes: repair_icon_path, window_title
+    @ returns:
 
-def repair_tool():
-    print(f">>> No durability left on your tool.")
-    sleep(randint(0, 1))
+    """
 
-    # Open up pet repair window
-    pyautogui.keyDown("alt")
-    pyautogui.press("p")
-    pyautogui.keyUp("alt")
-    sleep(randint(4, 5))
+    # properties
+    catch_counter = 0
 
-    while True:
-        screenshot = wincap.get_screenshot()  # get an updated image of the game
+    def __init__(self, repair_icon_path, window_title):
 
-        # render object detection images
-        repair_rectangles = repair_tool_icon.find(screenshot, 0.85)
+        # initialize the capture classes
+        self.wincap = WindowCapture(window_title)
+        self.repair_tool_icon = Vision(repair_icon_path)
 
-        # nibble check
-        if len(repair_rectangles) > 0:
-            print(f">>> Found repair tool icon")
-            sleep(randint(2, 3))
-            return True
-        else:
-            print(f">>> Was not able to repair tool.")
-            sleep(randint(2, 3))
-            return False
+        # Console log call to repair function
+        print(f">>> No durability left on your tool. Attempting to repair tools.")
+        sleep(randint(0, 1))
+        self.repair_tool()
+
+    def repair_tool(self):
+
+        # Open up pet repair window
+        pyautogui.keyDown("alt")
+        pyautogui.press("p")
+        pyautogui.keyUp("alt")
+        sleep(randint(4, 5))
+
+        while True:
+            screenshot = (
+                self.wincap.get_screenshot()
+            )  # get an updated image of the game
+
+            # render object detection images
+            repair_rectangles = self.repair_tool_icon.find(screenshot, 0.85)
+
+            # repair_rectangles check
+            if len(repair_rectangles) > 0:
+
+                # For debugging
+                # self.result = ">>> Found repair tool icon"
+                # print(self.result)
+                sleep(randint(2, 3))
+
+                # repair tools
+                #
+                #
+
+                # close pet window
+                print(f">>> Closing repair window and restarting bot")
+                sleep(randint(2, 3))
+                pyautogui.keyDown("alt")
+                pyautogui.press("p")
+                pyautogui.keyUp("alt")
+                sleep(randint(2, 3))
+                break
+
+    # def get_click_points(self, rectangles):
+    #     """
+    #     given a list of [x, y, w, h] rectangles returned by find(), convert those into a list of
+    #     [x, y] positions in the center of those rectangles where we can click on those found items
+    #     """
+
+    #     points = []
+
+    #     # Loop over all the rectangles
+    #     for (x, y, w, h) in rectangles:
+    #         # Determine the center position
+    #         center_x = x + int(w / 2)
+    #         center_y = y + int(h / 2)
+    #         # Save the points
+    #         points.append((center_x, center_y))
+
+    #     return points
