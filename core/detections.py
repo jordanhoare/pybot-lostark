@@ -1,7 +1,7 @@
-import datetime
 import os
 import sys
 import time
+from datetime import timedelta
 from random import randint
 from time import sleep
 
@@ -79,9 +79,11 @@ def catch_fish():
 def end_process():
     cv.destroyAllWindows()
     stop_time = time.time()
-    run_time = "{:.3f}".format((stop_time - start_time))
-    print(f">>> Successful fishing attempts: {catch_counter}.")
-    print(f">>> Script finished after:", str(datetime.timedelta(seconds=run_time)))
+    run_time = int((stop_time - start_time))
+    print(f">>> Successful fishing attempts: {catch_counter}")
+    print(
+        f">>> Script finished after:", "{:0>8}".format(str(timedelta(seconds=run_time)))
+    )
     print(f"####################################")
 
 
