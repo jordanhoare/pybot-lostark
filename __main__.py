@@ -1,8 +1,8 @@
-from modules import auto_fishing
+#
 
 
 def main():
-    auto_fishing()
+    pass
 
 
 if __name__ == "__main__":
