@@ -2,9 +2,20 @@
 ============
 [![GitHub Stars](https://img.shields.io/github/stars/jordanhoare/pybot-lostark.svg)](https://github.com/jordanhoare/pybot-lostark/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/jordanhoare/pybot-lostark.svg)](https://github.com/jordanhoare/pybot-lostark/issues) [![Current Version](https://img.shields.io/badge/version-0.5.0-green.svg)](https://github.com/jordanhoare/pybot-lostark) 
 
-![Alt Text](https://media.giphy.com/media/H542PcWInziUIs3jDA/giphy-downsized-large.gif)
-
 A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo will include scripts that automate player-like mechanics such as: walking, healing, attacking, item collection and skill training [Python, OpenCV].
+
+![Alt Text](https://media.giphy.com/media/H542PcWInziUIs3jDA/giphy-downsized-large.gif)
+```bash
+####################################
+>>> Lost Ark (9900746) window was located.
+>>> Trade Skill Quickslot is already selected.
+>>> No durability left on your tool. Attempting to repair tools.
+>>> Closing repair window and restarting bot.
+>>> Restarting bot... Idled for: 00:01:32
+>>> Script finished after: 00:12:41
+####################################
+```
+
 
 </br>
 
@@ -22,16 +33,7 @@ A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo wi
   :hourglass: Use pet menu to repair tool when low durability
   - [x] Change to lifeskill-quickslot if combat-quickslot is selected
 
-```bash
-####################################
->>> Lost Ark (9900746) window was located.
->>> Trade Skill Quickslot is already selected.
->>> No durability left on your tool. Attempting to repair tools.
->>> Closing repair window and restarting bot.
->>> Restarting bot... Idled for: 00:01:32
->>> Script finished after: 00:12:41
-####################################
-```
+
   
 
 #### HUD
