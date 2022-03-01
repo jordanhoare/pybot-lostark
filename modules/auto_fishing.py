@@ -129,7 +129,7 @@ while True:
     # display the processed image
     output_image = cv.resize(output_image, (960, 540))
     cv.imshow("Lost Ark:  Fishing automation", output_image)
-
+    
     # bot actions
     if initilised == 0:
         initilised = 1
@@ -142,10 +142,10 @@ while True:
     if len(no_durability_check) > 0:
         RepairTool(window_title)
         begin_fishing()
-        # if len(no_durability_check) > 0:
-        #     print(">>> Terminating bot - was not able to repair tool.")
-        #     end_process()
-        #     break
+        if len(no_durability_check) > 0:
+            print(">>> Terminating bot - was not able to repair tool.")
+            end_process()
+            break
     if (set_idle_time - idle_timer) > 90:
         idle_in_seconds = int((set_idle_time - idle_timer))
         print(

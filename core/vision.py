@@ -28,7 +28,8 @@ class Vision:
 
     # given a list of [x, y, w, h] rectangles returned by find(), convert those into a list of
     # [x, y] positions in the center of those rectangles where we can click on those found items
-    def get_click_points(self, rectangles):
+    @staticmethod
+    def get_click_points(rectangles):
         points = []
 
         # Loop over all the rectangles
