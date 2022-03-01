@@ -30,9 +30,8 @@ A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo wi
   - [ ] Waypoint selection
 
 #### Hp/Mp Restoration
-  - [ ] Retrieve player Hp/Mp %  
-  - [ ] Restore healthpoints  
-  - [ ] Restore mana 
+  - [ ] Retrieve player healthpoints
+  - [ ] Restore healthpoints with potion
 
 #### BattleList
   - [ ] Retrieve list of nearby monsters 
