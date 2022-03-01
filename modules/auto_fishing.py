@@ -33,7 +33,7 @@ from core.window_capture import WindowCapture
 # initialize the capture classes and counters
 window_title = "Lost Ark"
 wincap = WindowCapture(window_title)
-repair_icon_path = "data/repair_icon.jpeg"
+
 nibble_image = Vision("data/nibble_image.jpeg")
 low_energy_image = Vision("data/low_energy_image.jpeg")
 life_skill_icon = Vision("data/life_skill_check.jpeg")
@@ -141,7 +141,7 @@ while True:
             print(f">>> Trade Skill Quickslot is already selected.")
             begin_fishing()
     if len(no_durability_check) > 0:
-        RepairTool(repair_icon_path, window_title)
+        RepairTool(window_title)
         begin_fishing()
         if len(no_durability_check) > 0:
             print(">>> Terminating bot - was not able to repair tool.")
