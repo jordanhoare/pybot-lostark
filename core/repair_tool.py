@@ -64,11 +64,15 @@ class RepairTool:
                 sleep(randint(2, 3))
 
                 # repair tools
-                #
-                #
+                targets = Vision.get_click_points(repair_rectangles)
+                target = self.wincap.get_screen_position(targets[0])
+                pyautogui.moveTo(x=target[0], y=target[1])
+                sleep(randint(0, 1))
+                pyautogui.click
+                sleep(randint(0, 1))
 
                 # close pet window
-                print(f">>> Closing repair window and restarting bot")
+                print(f">>> Closing repair window and restarting bot.")
                 sleep(randint(2, 3))
                 pyautogui.keyDown("alt")
                 pyautogui.press("p")

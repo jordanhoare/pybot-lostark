@@ -51,7 +51,7 @@ def begin_fishing():
     pyautogui.click(750, 750)
     sleep(randint(0, 1))
     pyautogui.press("e")
-    sleep(randint(2, 3))
+    sleep(randint(1, 2))
 
 
 def change_quickslot():
@@ -144,11 +144,15 @@ while True:
         RepairTool(repair_icon_path, window_title)
         begin_fishing()
         if len(no_durability_check) > 0:
-            print(">>> Was not able to repair tool.")
+            print(">>> Terminating bot - was not able to repair tool.")
             end_process()
             break
     if (set_idle_time - idle_timer) > 20:
-        print((set_idle_time - idle_timer))
+        idle_in_seconds = int((set_idle_time - idle_timer))
+        print(
+            f">>> Restarting bot... Idled for:",
+            "{:0>8}".format(str(timedelta(seconds=idle_in_seconds))),
+        )
         begin_fishing()
     if len(nibble_rectangles) > 0:
         catch_fish()
