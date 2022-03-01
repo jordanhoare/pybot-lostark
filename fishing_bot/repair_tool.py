@@ -1,13 +1,10 @@
-import os
-import sys
 from random import randint
 from time import sleep
 
-import cv2 as cv
 import pyautogui
 
-from .vision import Vision
-from .window_capture import WindowCapture
+from ..window_capture.vision import Vision
+from ..window_capture.window_capture import WindowCapture
 
 
 class RepairTool:
@@ -106,7 +103,7 @@ class RepairTool:
                 sleep(randint(2, 3))
 
                 # close pet window
-                print(f">>> Closing repair window and restarting bot.")
+                print(">>> Closing repair window and restarting bot.")
                 pyautogui.press("esc")
                 sleep(randint(0, 1))
                 pyautogui.press("esc")
@@ -116,5 +113,5 @@ class RepairTool:
                 break
 
             ########################
-            ## throw an idle timer here incase someone has no Crystaline Aura
+            # throw an idle timer here incase someone has no Crystaline Aura
             ########################
