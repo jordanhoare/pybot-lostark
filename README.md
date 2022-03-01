@@ -4,7 +4,7 @@
 
 A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo will include scripts that automate player-like mechanics such as: walking, healing, attacking, item collection and skill training [Python, OpenCV].
 
-The script generates a canvas image (window capture) to identify each frame and leech the outputted graphics. The majority of modules/core scripts use these frames in bitmap finding algorithms (pattern matching with different colorspaces).  Scripts control the mouse and keyboard (pyautogui).
+The scripts generates a canvas image (window capture) to identify each frame and leech the outputted graphics. The majority of modules/core scripts use these frames in bitmap finding algorithms (pattern matching with different colorspaces).  Scripts control the mouse and keyboard (pyautogui).
 
 
 ![Alt Text](https://media.giphy.com/media/H542PcWInziUIs3jDA/giphy-downsized-large.gif)
