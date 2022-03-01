@@ -8,6 +8,7 @@ A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo wi
 
 </br>
 
+
 ## Module Completion Status
 #### Player Automation 
   :hourglass: Fishing 
@@ -53,6 +54,10 @@ poetry shell
 ## Requirements (Python)
 - Pyenv
 - Poetry
+
+
+## Disclaimer
+- This project is for educational purposes.  Use at your own risk.
 
  
 </br>
