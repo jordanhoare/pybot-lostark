@@ -6,10 +6,8 @@ from time import sleep
 import cv2 as cv
 import pyautogui
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
-from core.vision import Vision
-from core.window_capture import WindowCapture
+from .vision import Vision
+from .window_capture import WindowCapture
 
 
 class RepairTool:
@@ -40,7 +38,7 @@ class RepairTool:
         self.repair_all_ok_button = Vision(self.repair_all_ok_path)
 
         # Console log call to repair function
-        print(f">>> No durability left on your tool. Attempting to repair tools.")
+        print(">>> No durability left on your tool. Attempting to repair tools.")
         sleep(randint(0, 1))
         self.repair_tool()
 
