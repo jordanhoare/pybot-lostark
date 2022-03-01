@@ -1,3 +1,4 @@
+import datetime
 import os
 import sys
 import time
@@ -78,16 +79,13 @@ def catch_fish():
 def end_process():
     cv.destroyAllWindows()
     stop_time = time.time()
-    print(f">>> Successful fishing attempts: '{catch_counter}' times.")
-    print(
-        f">>> Script finished after:",
-        "{:.3f}".format(1.0 / (stop_time - start_time)),
-    )
+    run_time = "{:.3f}".format((stop_time - start_time))
+    print(f">>> Successful fishing attempts: {catch_counter}.")
+    print(f">>> Script finished after:", str(datetime.timedelta(seconds=run_time)))
     print(f"####################################")
 
 
 while True:
-    start = time.time()  # start time of the loop
     screenshot = wincap.get_screenshot()  # get an updated image of the game
 
     # render object detection images

@@ -68,7 +68,7 @@ def end_process():
     print(f">>> Successful fishing attempts: '{catch_counter}' times.")
     print(
         f">>> Script finished after:",
-        "{:.3f}".format(1.0 / (start - idle_timer)),
+        "{:.3f}".format((start - idle_timer)),
     )
     print(f"####################################")
 
