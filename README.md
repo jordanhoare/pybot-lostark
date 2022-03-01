@@ -8,12 +8,18 @@ A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo wi
 
 </br>
 
-## Development Features
+## Module Completion Status
 #### Player Automation 
-  - [x] Fishing
+  - [-] Fishing
   - [ ] Mining
   - [ ] Herbalore
   - [ ] Woodcutting
+
+
+## Feature Development
+#### Continuation Checks
+  - [x] Change to lifeskill-quickslot if combat-quickslot is selected
+  - [-] Use pet menu to repair tool when low durability
 
 #### HUD
   - [ ] Create overlay with loot count tracker
