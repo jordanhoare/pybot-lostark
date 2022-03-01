@@ -10,7 +10,7 @@ A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo wi
 
 ## Module Completion Status
 #### Player Automation 
-  - [-] Fishing
+  - :warning: Fishing 
   - [ ] Mining
   - [ ] Herbalore
   - [ ] Woodcutting
@@ -19,7 +19,7 @@ A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo wi
 ## Feature Development
 #### Continuation Checks
   - [x] Change to lifeskill-quickslot if combat-quickslot is selected
-  - [-] Use pet menu to repair tool when low durability
+  - :warning: Use pet menu to repair tool when low durability 
 
 #### HUD
   - [ ] Create overlay with loot count tracker
