@@ -21,6 +21,17 @@ A computer-vision based python SDK for the AMMORPG game 'Lost Ark'. This repo wi
 #### Continuation Checks
   :hourglass: Use pet menu to repair tool when low durability
   - [x] Change to lifeskill-quickslot if combat-quickslot is selected
+
+```bash
+####################################
+>>> Lost Ark (9900746) window was located.
+>>> Trade Skill Quickslot is already selected.
+>>> No durability left on your tool. Attempting to repair tools.
+>>> Closing repair window and restarting bot.
+>>> Restarting bot... Idled for: 00:01:32
+>>> Script finished after: 00:12:41
+####################################
+```
   
 
 #### HUD
