@@ -41,6 +41,19 @@ Lost Ark SDK
 
 </br>
 
+## Disclaimer
+- This project is for educational purposes.  Use at your own risk.
+
+ 
+</br>
+
+## Requirements 
+- Python (3.8.2)
+- Poetry (https://python-poetry.org/docs/)
+
+</br>
+
+
 ## Running the app
 
 ```bash
@@ -51,19 +64,7 @@ poetry shell
 
 </br>
 
-## Requirements (Python)
-- Pyenv
-- Poetry
-
-
-## Disclaimer
-- This project is for educational purposes.  Use at your own risk.
-
- 
 </br>
-
-</br>
-
 
 <p align="center">
     <a href="https://www.linkedin.com/in/jordan-hoare/">
