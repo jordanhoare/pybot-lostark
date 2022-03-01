@@ -51,7 +51,6 @@ def begin_fishing():
     pyautogui.click(750, 750)
     sleep(randint(0, 1))
     pyautogui.press("e")
-    sleep(randint(1, 2))
 
 
 def change_quickslot():
@@ -84,7 +83,7 @@ def idle_check():
 
 def catch_fish():
     pyautogui.press("e")
-    sleep(randint(6, 7))
+    sleep(randint(7, 8))
     pyautogui.click(752, 751)
     sleep(randint(0, 1))
     pyautogui.press("e")
@@ -118,7 +117,7 @@ while True:
     screenshot = wincap.get_screenshot()
 
     # render object detection images
-    nibble_rectangles = nibble_image.find(screenshot, 0.75)
+    nibble_rectangles = nibble_image.find(screenshot, 0.8)
     life_skill_activated = life_skill_icon.find(screenshot, 0.90)
     low_energy_rectangles = low_energy_image.find(screenshot, 0.96)
     floater_rectangles = floater_image.find(screenshot, 0.90)
@@ -143,16 +142,17 @@ while True:
     if len(no_durability_check) > 0:
         RepairTool(window_title)
         begin_fishing()
-        if len(no_durability_check) > 0:
-            print(">>> Terminating bot - was not able to repair tool.")
-            end_process()
-            break
-    if (set_idle_time - idle_timer) > 20:
+        # if len(no_durability_check) > 0:
+        #     print(">>> Terminating bot - was not able to repair tool.")
+        #     end_process()
+        #     break
+    if (set_idle_time - idle_timer) > 90:
         idle_in_seconds = int((set_idle_time - idle_timer))
         print(
             f">>> Restarting bot... Idled for:",
             "{:0>8}".format(str(timedelta(seconds=idle_in_seconds))),
         )
+        idle_timer = time.time()
         begin_fishing()
     if len(nibble_rectangles) > 0:
         catch_fish()
