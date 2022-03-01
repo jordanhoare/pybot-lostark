@@ -47,7 +47,6 @@ initilised = 0
 
 def begin_fishing():
     print(f">>> Trade Skill Quickslot is already selected.")
-    print(f">>> Starting to fish.")
     sleep(randint(0, 1))
     pyautogui.click(750, 750)
     sleep(randint(0, 1))
@@ -96,7 +95,7 @@ def end_process():
     cv.destroyAllWindows()
     stop_time = time.time()
     run_time = int((stop_time - start_time))
-    print(f">>> Successful fishing attempts: {catch_counter}")
+    print(f">>> Successful attempts: {catch_counter}")
     print(
         f">>> Script finished after:", "{:0>8}".format(str(timedelta(seconds=run_time)))
     )
@@ -114,7 +113,8 @@ def initilise_fishing():
 
 
 while True:
-    screenshot = wincap.get_screenshot()  # get an updated image of the game
+    # get an updated image of the game
+    screenshot = wincap.get_screenshot()
 
     # render object detection images
     nibble_rectangles = nibble_image.find(screenshot, 0.75)
@@ -125,16 +125,12 @@ while True:
 
     # draw the detection results onto the original image
     output_image = nibble_image.draw_rectangles(screenshot, nibble_rectangles)
-    # output_image = low_energy_image.draw_rectangles(screenshot, no_durability_check)
-    # output_image = life_skill_icon.draw_rectangles(screenshot, floater_rectangles)
-    # output_image = floater_image.draw_rectangles(screenshot, low_energy_rectangles)
-    # output_image = no_durability_image.draw_rectangles(screenshot, life_skill_activated)
 
     # display the processed image
     output_image = cv.resize(output_image, (960, 540))
     cv.imshow("Lost Ark:  Fishing automation", output_image)
 
-    # checks
+    # bot actions
     if initilised == 0:
         initilised = 1
         initilise_fishing()
