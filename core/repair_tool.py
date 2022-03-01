@@ -116,3 +116,7 @@ class RepairTool:
                 pyautogui.press("esc")
                 sleep(randint(0, 3))
                 break
+
+            ########################
+            ## throw an idle timer here incase someone has no Crystaline Aura
+            ########################
