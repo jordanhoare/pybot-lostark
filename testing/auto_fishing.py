@@ -128,13 +128,14 @@ while True:
     low_energy_rectangles = low_energy_image.find(
         screenshot, 0.8
     )  # settings.ENERGY_THRESHOLD
+
     floater_rectangles = floater_image.find(screenshot, 0.90)
     no_durability_check = no_durability_image.find(screenshot, 0.70)
 
     # draw the detection results onto the original image
     # display the processed image
     output_image = nibble_image.draw_rectangles(screenshot, nibble_rectangles)
-    output_image = cv.resize(output_image, (960, 540))
+    output_image = cv.resize(screenshot, (960, 540))
     cv.imshow("Lost Ark:  Fishing automation", output_image)
 
     # bot actions
