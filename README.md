@@ -68,7 +68,7 @@ A computer-vision based python SDK for the AMMORPG 'Lost Ark'. The bot functions
     ```
 </details>
 
-</br>
+
 </br>
 
 ## Module Completion Status
@@ -78,6 +78,7 @@ A computer-vision based python SDK for the AMMORPG 'Lost Ark'. The bot functions
   - [ ] Herbalore
   - [ ] Woodcutting
 
+</br>
 
 ## Feature Development
 #### Continuation Checks
