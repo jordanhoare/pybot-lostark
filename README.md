@@ -19,65 +19,17 @@ A computer-vision based python SDK for the AMMORPG 'Lost Ark' [Python, OpenCV]. 
 ####################################
 ```
 
-
 </br>
+
+## Installation, Requirements & Usage
 
 <details>
-  <summary>Module Completion Status</summary>
+  <summary>Disclaimer</summary>
 
 </br>
 
-- Player Automation
-    ```
-    :hourglass: Fishing 
-  - [ ] Mining
-  - [ ] Herbalore
-  - [ ] Woodcutting
-
-    ```
-- Initialise poetry:
-    ```
-    poetry build
-    ```
-- This project is being restructured currently, so for now activate the poet shell and run the draft auto_fishing script. pyautogui.click(x,y) can be reconfigured for screen position.
-    ```
-    poetry shell
-    pybot-lostark/draft/modules/auto_fishing.py
-    ```
-</details>
-
-</br>
-
-
-
-## Feature Development
-#### Continuation Checks
-  :hourglass: Use pet menu to repair tool when low durability
-  - [x] Change to lifeskill-quickslot if combat-quickslot is selected
-
-
-  
-
-#### HUD
-  - [ ] Create overlay with loot count tracker
-
-#### Movement
-  - [ ] Identify player's coordinates
-  - [ ] Waypoint selection
-
-#### Hp/Mp Restoration
-  - [ ] Retrieve player healthpoints
-  - [ ] Restore healthpoints with potion
-
-#### BattleList
-  - [ ] Retrieve list of nearby monsters 
-  - [ ] Use 'x' spellcast when monster is near center of the screen
-
-
-</br>
-
-## Disclaimer
 - This project is for educational purposes.  Use at your own risk.
+</details>
 
  
 </br>
@@ -115,20 +67,25 @@ A computer-vision based python SDK for the AMMORPG 'Lost Ark' [Python, OpenCV]. 
 </details>
 
 </br>
-
 </br>
 
-<p align="center">
-    <a href="https://www.linkedin.com/in/jordan-hoare/">
-        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-    </a>&nbsp;&nbsp;
-    <a href="https://www.kaggle.com/jordanhoare">
-        <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white" />
-    </a>&nbsp;&nbsp;
-    <a href="mailto:jordanhoare0@gmail.com">
-        <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-    </a>&nbsp;&nbsp;
-</p>
+## Module Completion Status
+#### Player Automation 
+  :hourglass: Fishing 
+  - [ ] Mining
+  - [ ] Herbalore
+  - [ ] Woodcutting
 
 
+## Feature Development
+#### Continuation Checks
+  :hourglass: Use pet menu to repair tool when low durability
+  - [x] Change to lifeskill-quickslot if combat-quickslot is selected
 
+
+#### HUD
+  - [ ] Create overlay with loot count tracker
+
+#### Movement
+  - [ ] Identify player's coordinates
+  - [ ] Waypoint selection
