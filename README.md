@@ -29,7 +29,7 @@ A computer-vision based python SDK for the AMMORPG 'Lost Ark'. The bot functions
 
 </br>
 
-- This project is for educational purposes.  Use at your own risk.
+- This project is for educational purposes and won't be maintained long term. 
 - Pixelbotting with pyautogui is quite easily detectable with server sendInput checks, so use at your own risk.  
 </details>
 
