@@ -1,0 +1,8 @@
+{
+    "WINDOW_TITLE": "Lost Ark",
+    "ENERGY_THRESHOLD": 0.9,
+    "NIBBLE_THRESHOLD": 0.80,
+    "DURABILITY_THRESHOLD": 0.80,
+    "NIBBLE_NEEDLE": "data/low_energy_image.jpeg",
+    "DURABILITY_NEEDLE":"data/low_energy_image.jpeg"
+}

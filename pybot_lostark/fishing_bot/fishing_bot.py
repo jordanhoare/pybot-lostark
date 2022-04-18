@@ -1,21 +1,22 @@
-from config import get_settings
-from match_template import MatchTemplate
+import json
 
-settings = get_settings()
+from match_template import MatchTemplate
 
 
 class FishingBot:
-    def __init__(self, match_template: MatchTemplate):
-        self.match = match_template.find()
+    def __init__(self, screenshot, needle_img):
+
+        with open("pybot_lostark/fishing_bot/config.json", "r") as LoadsJson:
+            self.config = json.load(LoadsJson)
+
+        self.screenshot = screenshot
+        self.mt = MatchTemplate.find(screenshot)
+        # nibble_rectangles = nibble_image.find(screenshot, 0.8)
 
     def process_screenshot(self):
-        self._durability = 1
+        self._durability = self.mt(self.config["DURABILITY_NEEDLE"])
 
     @property
-    def has_durability(self):  # -> bool
+    def has_durability(self):  # -> bool:
         if self._durability:
-            print("true")
             return True
-        else:
-            print("false")
-            return False

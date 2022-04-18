@@ -22,13 +22,32 @@ A computer-vision based python SDK for the AMMORPG 'Lost Ark' [Python, OpenCV]. 
 
 </br>
 
+<details>
+  <summary>Module Completion Status</summary>
 
-## Module Completion Status
-#### Player Automation 
-  :hourglass: Fishing 
+</br>
+
+- Player Automation
+    ```
+    :hourglass: Fishing 
   - [ ] Mining
   - [ ] Herbalore
   - [ ] Woodcutting
+
+    ```
+- Initialise poetry:
+    ```
+    poetry build
+    ```
+- This project is being restructured currently, so for now activate the poet shell and run the draft auto_fishing script. pyautogui.click(x,y) can be reconfigured for screen position.
+    ```
+    poetry shell
+    pybot-lostark/draft/modules/auto_fishing.py
+    ```
+</details>
+
+</br>
+
 
 
 ## Feature Development
@@ -63,20 +82,37 @@ A computer-vision based python SDK for the AMMORPG 'Lost Ark' [Python, OpenCV]. 
  
 </br>
 
-## Requirements 
-- Python (3.8.2)
-- Poetry (https://python-poetry.org/docs/)
+<details>
+  <summary>Requirements</summary>
 
 </br>
 
+- [Git](https://git-scm.com/) for command-line interface 
+- [Pyenv](https://github.com/pyenv/pyenv) for Python version management tool
+- [Poetry](https://python-poetry.org/docs/) for dependency management and packaging
+</details>
 
-## Running the app
+</br>
 
-```bash
-# clone the repo, navigate to the project folder.  to start the venv, run:
-poetry update
-poetry shell
-```
+<details>
+  <summary>Reproduction on a local machine</summary>
+
+</br>
+
+- Clone the GitHub repository to an empty folder on your local machine:
+    ```
+    gh repo clone jordanhoare/pybot_lostark
+    ```
+- Initialise poetry:
+    ```
+    poetry build
+    ```
+- This project is being restructured currently, so for now activate the poet shell and run the draft auto_fishing script. pyautogui.click(x,y) can be reconfigured for screen position.
+    ```
+    poetry shell
+    pybot-lostark/draft/modules/auto_fishing.py
+    ```
+</details>
 
 </br>
 
